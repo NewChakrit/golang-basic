@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode/utf8"
+)
 
 // var H = 100  -- Global variable --cannot write type inferrence**
 
@@ -68,4 +71,75 @@ func main() {
 	} else {
 		fmt.Println("Not pass")
 	}
+
+	fmt.Println("\n")
+
+	// ----- Array -----
+
+	//fix index
+
+	var num [3]int = [3]int{1, 2, 3}
+	fmt.Println(num, "\n") //[1, 2, 3]
+	fmt.Println(num[0])    // 1
+	fmt.Println(num[1])    // 2
+	fmt.Println(num[2])    // 3
+
+	// var num2 [3]int = [3]int{} // Zero value
+	num2 := [3]int{}          // short declaretion
+	fmt.Println(num2)         // [ 0, 0, 0]
+	fmt.Printf("%#v\n", num2) //[3]int{0, 0, 0}
+
+	// 2D array
+	//syntax first[] = [number of member in array]
+	// second[] = [number of index]
+	m := [3][3]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	}
+
+	fmt.Println(m[2][2]) //9
+
+	// infinit value array
+
+	num3 := [...]int{1, 2, 3, 4}
+	fmt.Println(num3)
+
+	// ---- Slice ----
+	// slice can add value in arrray by use func(append)
+	num4 := []int{1, 2, 3, 4}
+	num4 = append(num4, 5)  //append return num4+ 5
+	num5 := append(num4, 6) // num4 + 6 =num5
+
+	checkQuanNum := len(num5)
+
+	fmt.Printf("%#v\n", num4)
+	fmt.Println(num4)
+	fmt.Println(num5)
+
+	fmt.Println(checkQuanNum) //6
+	fmt.Printf("%v, %v\n", num5, checkQuanNum)
+
+	//** Warnning ** Don't use <len> to check quantity of string
+	// name1 := "abc"
+	// fmt.Println(len(name1)) //3
+
+	// name2 := "ก"
+	// fmt.Println(len(name2)) //3 because defference bit
+
+	//if you want to count string, Use uft8.RuneCountInString
+
+	name3 := "ฟหefg"
+	fmt.Println(utf8.RuneCountInString(name3)) //5
+
+	//---- set value by length -----
+
+	num6 := []int{10, 20, 30, 40, 50, 60, 70, 80, 90}
+	num7 := num6[3:]
+	fmt.Println(num7) //40 50 60 70 80 90
+
+	num6 = append(num6, 110)
+	num8 := num6[:5]
+	fmt.Println(num8)      //10 20 30 40 50
+	fmt.Println(num8[2:4]) //30 40
 }
