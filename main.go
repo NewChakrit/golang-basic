@@ -142,4 +142,14 @@ func main() {
 	num8 := num6[:5]
 	fmt.Println(num8)      //10 20 30 40 50
 	fmt.Println(num8[2:4]) //30 40
+
+	//  ----- Map -----
+	// var countries map[string]string{}
+
+	// countries:= map[string] string{"TH": "Thai", "JP":"Japan"}
+	countries := map[string]string{}
+	countries["TH"] = "Thailand"
+	countries["JP"] = "Japan"
+
+	fmt.Println(countries["TH"]) //Thailand
 }
