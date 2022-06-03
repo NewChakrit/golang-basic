@@ -52,4 +52,20 @@ func main() {
 
 	fmt.Println("\n")
 
+	// ----- If Else -----
+
+	point := 50
+	// if point >= 100 {
+	// 	fmt.Println(point, "is less than 100")
+	// } else if point <= 50 {
+	// 	fmt.Println(point, "is more or equl 50")
+	// } else {
+	// 	fmt.Println("Point is ", point)
+	// }
+
+	if point >= 50 && point <= 100 {
+		fmt.Println("Pass")
+	} else {
+		fmt.Println("Not pass")
+	}
 }
