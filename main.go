@@ -51,5 +51,6 @@ func main() {
 	fmt.Println(aa)   // "" (empty)
 
 	fmt.Println("\n")
+	fmt.Println("\n")
 
 }
