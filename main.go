@@ -263,6 +263,41 @@ func main() {
 
 	fmt.Println(customer.Hello()) //Hello Chakrit
 
+	// ----- Pointer -----
+	// var x1 int
+	// x1 = 21
+	// var y1 int
+	// y1 = x1 // pass by value --> Not!! pass by reference
+
+	x1 := 21
+	y1 := x1
+
+	y1 = 34
+	fmt.Println(x1, y1) //21 , 34
+
+	//pointer
+	var x2, y2 int
+	x2 = 10
+	y2 = x2
+	// var y2 *int //var is pointer of int
+
+	fmt.Println(&x2) // 0xc0000141a8
+	fmt.Println(&y2) // 0xc0000141c0
+
+	var y3 *int      // is pointer
+	y3 = &x2         //pass by reference
+	fmt.Println(y3)  //0xc0000141a8
+	fmt.Println(*y3) //10
+
+	*y3 = 20         //pass by reference
+	fmt.Println(*y3) //20
+	fmt.Println(x2)  //20 now x2 = 20 !!!!
+
+	// -- pointer exam --
+	var x5 int
+	sum5(&x5)
+	fmt.Println(x5) //30
+
 }
 
 //  ----- Func -----
@@ -320,4 +355,11 @@ func sum4(a ...int) int {
 	}
 
 	return s
+}
+
+// -- pointer exam --
+func sum5(result *int) {
+	a := 10
+	b := 20
+	*result = a + b
 }
