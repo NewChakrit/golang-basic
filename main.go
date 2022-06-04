@@ -204,4 +204,27 @@ func main() {
 		fmt.Println("Index :", i)
 	}
 
+	// func sum
+	fmt.Println(sum())
+
+	//func sum1
+	d, e, f := sum1(4, 5)
+	fmt.Println(d, e, f) // 9 hello true
+
+	//if don't want some value
+	d, _, _ = sum1(7, 8)
+	fmt.Println(d) //15
+}
+
+//  ----- Func -----
+
+func sum() int {
+	a := 10
+	b := 20
+	return a + b
+
+}
+
+func sum1(a, b int) (int, string, bool) {
+	return a + b, "Hello", true
 }
