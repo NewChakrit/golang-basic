@@ -182,6 +182,26 @@ func main() {
 		ii++
 	}
 
+	fmt.Println("\n")
+
 	// ----- for range -----
+
+	values := []int{90, 80, 70, 60, 50, 40, 30, 20, 10}
+
+	for i, v := range values { // i is index , v is value
+		fmt.Println("Index :", i, ", Value :", v)
+
+	}
+
+	//if don't want some value
+
+	for _, v := range values {
+		fmt.Println("Value :", v)
+	}
+
+	//or
+	for i, _ := range values {
+		fmt.Println("Index :", i)
+	}
 
 }
