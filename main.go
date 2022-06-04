@@ -3,6 +3,9 @@ package main
 import (
 	"fmt"
 	"unicode/utf8"
+
+	"main.go/customer"
+	"main.go/user"
 )
 
 // var H = 100  -- Global variable --cannot write type inferrence**
@@ -251,6 +254,14 @@ func main() {
 	//validic slice parameter
 	k = sum4(5, 6, 7, 8)
 	fmt.Println(k) //26
+
+	// ----- Package -----
+	fmt.Println(user.Name)     // User
+	fmt.Println(customer.Name) //New
+
+	customer.Customer() //Hello Customer
+
+	fmt.Println(customer.Hello()) //Hello Chakrit
 
 }
 
