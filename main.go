@@ -217,7 +217,7 @@ func main() {
 
 	fmt.Println("\n")
 
-	//annonimus func --- doesn't has name
+	//annonymous func --- doesn't has name
 
 	s := func(a, b int) int {
 		return a + b
@@ -226,6 +226,32 @@ func main() {
 	sum2 := s(10, 20)
 
 	fmt.Println(sum2) //30
+
+	//func advance
+
+	cal(add) // 60
+	cal(sub) //40
+	// cal(hello) //error  signature type wrong
+
+	g := func(a, b int) int {
+		return a * b
+	}
+	cal(g) //500
+
+	//finally
+	cal(func(a, b int) int {
+		return a / b //5
+	})
+
+	//array parameter
+	v := []int{1, 2, 3}
+	k := sum3(v)
+	fmt.Println(k) // 6
+
+	//validic slice parameter
+	k = sum4(5, 6, 7, 8)
+	fmt.Println(k) //26
+
 }
 
 //  ----- Func -----
@@ -241,7 +267,7 @@ func sum1(a, b int) (int, string, bool) {
 	return a + b, "Hello", true
 }
 
-// ----- annomus func -----
+// ----- annonymous func -----
 
 // type (int,int) int
 func add(a, b int) int {
@@ -256,4 +282,31 @@ func sub(a, b int) int {
 //type (string) string
 func hello(name string) string {
 	return "Hello " + name
+}
+
+func cal(f func(int, int) int) {
+	sum := f(50, 10)
+	fmt.Println(sum)
+}
+
+// ----- mutiparameter func (array parameter) -----
+
+func sum3(a []int) int {
+	s := 0
+	for _, v := range a {
+		s += v
+	}
+
+	return s
+}
+
+// ----- func validic slice parameter -----
+
+func sum4(a ...int) int {
+	s := 0
+	for _, v := range a {
+		s += v
+	}
+
+	return s
 }
