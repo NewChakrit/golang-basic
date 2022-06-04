@@ -152,4 +152,19 @@ func main() {
 	countries["JP"] = "Japan"
 
 	fmt.Println(countries["TH"]) //Thailand
+	fmt.Println(countries)
+
+	// x,y := 10,20 -- mutiple declaretion
+
+	// ---- if else ----
+	country, checkCountry := countries["jj"]
+	fmt.Println("country is :", country, ",country has value :", checkCountry)
+
+	if checkCountry {
+		fmt.Println(country)
+	} else {
+		fmt.Println("Don't has country")
+	}
+
+	// ---- For Loop ----
 }
