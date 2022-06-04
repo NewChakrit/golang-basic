@@ -167,4 +167,21 @@ func main() {
 	}
 
 	// ---- For Loop ----
+
+	value := []int{1, 2, 3, 4, 5, 6}
+
+	for i := 0; i < len(value); i++ {
+		fmt.Println(value[i])
+	}
+
+	// or
+
+	ii := 0
+	for ii < len(value) {
+		fmt.Println(value[ii])
+		ii++
+	}
+
+	// ----- for range -----
+
 }
