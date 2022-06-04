@@ -214,6 +214,18 @@ func main() {
 	//if don't want some value
 	d, _, _ = sum1(7, 8)
 	fmt.Println(d) //15
+
+	fmt.Println("\n")
+
+	//annonimus func --- doesn't has name
+
+	s := func(a, b int) int {
+		return a + b
+	}
+
+	sum2 := s(10, 20)
+
+	fmt.Println(sum2) //30
 }
 
 //  ----- Func -----
@@ -227,4 +239,21 @@ func sum() int {
 
 func sum1(a, b int) (int, string, bool) {
 	return a + b, "Hello", true
+}
+
+// ----- annomus func -----
+
+// type (int,int) int
+func add(a, b int) int {
+	return a + b
+}
+
+// type (int,int) int
+func sub(a, b int) int {
+	return a - b
+}
+
+//type (string) string
+func hello(name string) string {
+	return "Hello " + name
 }
