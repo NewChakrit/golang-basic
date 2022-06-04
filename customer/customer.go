@@ -17,3 +17,20 @@ type Person2 struct {
 	gda     float32
 	Gda     float32
 }
+
+type Person3 struct {
+	name string
+	age  int
+}
+
+func (p Person3) GetName() string {
+	return p.name
+}
+
+func (p *Person3) SetName(name string) {
+	p.name = name
+}
+
+func (p Person3) GetAge() int {
+	return p.age
+}

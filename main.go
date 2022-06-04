@@ -345,6 +345,12 @@ func main() {
 	fmt.Println(x8.Surname) //Tna
 	fmt.Println(x8.Age)     //25
 
+	// ---- like OOP cncept ----
+	xPerson3 := customer.Person3{}
+	xPerson3.SetName("Chakrit Person3")
+	println(xPerson3.GetName())             // 'Chakrit Person3'
+	fmt.Printf("%#v\n", xPerson3.GetName()) // 'Chakrit Person3'
+
 }
 
 //  ----- Func -----
