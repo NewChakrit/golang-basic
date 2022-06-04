@@ -22,14 +22,14 @@ func main() {
 	fmt.Printf("Hello %v \n", "World")  //%v print value
 	fmt.Printf("Hello %#v \n", "World") //%v print > value  -- more => Hello "World"
 
-	fmt.Printf("%T \n", false) //%T check type
+	fmt.Printf("%T \n", false) //%T check type --- bool
 
 	// ---- Declaretion ----
 	// var -- can change value
 	// const -- cannot change value
 
 	var q int
-	_ = q // declared but never use
+	_ = q // declared but doesn't use
 
 	var x int = 10
 	fmt.Println(x)
@@ -101,7 +101,13 @@ func main() {
 		{7, 8, 9},
 	}
 
-	fmt.Println(m[2][2]) //9
+	m2 := [2][1]int{
+		{2},
+		{3},
+	}
+
+	fmt.Println(m[2][2])  //9
+	fmt.Println(m2[1][0]) //3
 
 	// infinit value array
 
@@ -111,17 +117,18 @@ func main() {
 	// ---- Slice ----
 	// slice can add value in arrray by use func(append)
 	num4 := []int{1, 2, 3, 4}
-	num4 = append(num4, 5)  //append return num4+ 5
-	num5 := append(num4, 6) // num4 + 6 =num5
+	num4 = append(num4, 5)  //append return num4+ 5 ---> [1,2,3,4,5]
+	num5 := append(num4, 6) // num4 + 6 =num5 ---> [1,2,3,4,5,6]
 
+	//len method check length
 	checkQuanNum := len(num5)
 
 	fmt.Printf("%#v\n", num4)
 	fmt.Println(num4)
 	fmt.Println(num5)
 
-	fmt.Println(checkQuanNum) //6
-	fmt.Printf("%v, %v\n", num5, checkQuanNum)
+	fmt.Println(checkQuanNum)                  //6
+	fmt.Printf("%v, %v\n", num5, checkQuanNum) // [1,2,3,4,5,6], 6
 
 	//** Warnning ** Don't use <len> to check quantity of string
 	// name1 := "abc"
@@ -159,7 +166,6 @@ func main() {
 
 	// x,y := 10,20 -- mutiple declaretion
 
-	// ---- if else ----
 	country, checkCountry := countries["jj"]
 	fmt.Println("country is :", country, ",country has value :", checkCountry)
 
