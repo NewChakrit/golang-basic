@@ -298,6 +298,53 @@ func main() {
 	sum5(&x5)
 	fmt.Println(x5) //30
 
+	// ----- Struct -----
+	x6 := Person{
+		Name: "Chakrit",
+		Age:  25,
+
+		// func  // cannot declaresion in struct **
+	}
+
+	fmt.Println(x6)
+	fmt.Println(x6.Name) //Chakrit
+	fmt.Println(x6.Age)  //25
+
+	x7 := customer.Person2{
+		Name:    "Chakrit2",
+		Surname: "Tna",
+		// gda: 5.55, // Error!!
+		Gda: 3.32,
+	}
+	fmt.Println(x7)
+	fmt.Println(x7.Name)    //Chakrit2
+	fmt.Println(x7.Surname) //Tna
+	fmt.Println(x7.Age)     //0
+	// fmt.Println(x7.gda) //Error !! not capital charactor
+	fmt.Println(x7.Gda)
+
+	y := x
+
+	fmt.Println(x)  //Same value y --10
+	fmt.Println(y)  //Same value x --10
+	fmt.Println(&x) //not same position y
+	fmt.Println(&y) //not same position x
+
+	// x8 := Person{
+	// 	Name: "Chakrit3",
+	// }
+	// fmt.Println(Hello2(x8)) // Hello Chakrit3
+
+	x8 := Person{
+		Name:    "Chakrit3",
+		Surname: "Tna",
+		Age:     25,
+	}
+
+	fmt.Println(x8.Name)    // Chakrit3
+	fmt.Println(x8.Surname) //Tna
+	fmt.Println(x8.Age)     //25
+
 }
 
 //  ----- Func -----
@@ -362,4 +409,22 @@ func sum5(result *int) {
 	a := 10
 	b := 20
 	*result = a + b
+}
+
+// ----- Struct -----
+type Person struct {
+	Name    string
+	Surname string
+	Age     int
+}
+
+// use func parameter struct
+func Hello2(p Person) string {
+	return "Hello " + p.Name
+}
+
+// ----- Struct Method -----
+
+func (p Person) Hello3() string { // Method of Struck
+	return "Hello3 " + p.Name
 }
